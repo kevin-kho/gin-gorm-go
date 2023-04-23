@@ -49,6 +49,9 @@ func main() {
 		restaurantRoutes.POST("/create", restaurant.CreateRestaurant)
 		restaurantRoutes.PATCH("/update/:id", restaurant.UpdateRestaurant)
 		restaurantRoutes.DELETE("/delete/:id", restaurant.DeleteRestaurant)
+
+		restaurantRoutes.GET("/addLike/:id", restaurant.AddLike)
+		restaurantRoutes.GET("/addDislike/:id", restaurant.AddDislike)
 	}
 
 	err := r.Run("localhost:8080")
