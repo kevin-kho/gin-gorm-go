@@ -99,6 +99,7 @@ func AddLike(ctx *gin.Context) {
 	err = common.DB.First(&restaurant).Error
 	if err != nil {
 		ctx.JSON(500, gin.H{"message": "Internal server error"})
+		return
 	}
 
 	restaurant.Likes += 1
@@ -106,6 +107,7 @@ func AddLike(ctx *gin.Context) {
 	err = common.DB.Save(&restaurant).Error
 	if err != nil {
 		ctx.JSON(500, gin.H{"message": "Internal server error"})
+		return
 	}
 
 	ctx.JSON(200, gin.H{"message": "Success"})
@@ -124,6 +126,7 @@ func AddDislike(ctx *gin.Context) {
 	err = common.DB.First(&restaurant).Error
 	if err != nil {
 		ctx.JSON(500, gin.H{"message": "Internal server error"})
+		return
 	}
 
 	restaurant.Dislikes += 1
@@ -131,6 +134,7 @@ func AddDislike(ctx *gin.Context) {
 	err = common.DB.Save(&restaurant).Error
 	if err != nil {
 		ctx.JSON(500, gin.H{"message": "Internal server error"})
+		return
 	}
 
 	ctx.JSON(200, gin.H{"message": "Success"})
