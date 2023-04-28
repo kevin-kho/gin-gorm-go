@@ -5,8 +5,9 @@ import (
 	"gin-gorm-go/migration"
 	"gin-gorm-go/restaurant"
 	"gin-gorm-go/user"
-	"github.com/gin-gonic/gin"
 	"log"
+
+	"github.com/gin-gonic/gin"
 )
 
 func init() {
